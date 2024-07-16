@@ -1,15 +1,12 @@
-import { View, Text } from "react-native";
+import * as React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './src/store';
+import { TodoApp } from './src/features/todos/TodoApp';
 
 export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
+    <Provider store={store}>
+      <TodoApp />
+    </Provider>
   );
 }
